@@ -44,11 +44,11 @@ help: ## This help.
 
 lsee: ## Ensures that the lsee image is pulled from docker hub. 
 	@echo "[lsee] Ensuring we have lsee"
-	docker pull jjhenkel/lsee
+	docker pull rn123/lsee
 
 lsee-no-df: ## Ensures we have the lsee:no-df image.
 	@echo "[lsee] Ensuring we have lsee:no-df"
-	docker pull jjhenkel/lsee:no-df
+	docker pull rn123/lsee:no-df
 
 redis: lsee ## Generates traces for redis and creates merged trace corpus.
 	@echo "[lsee] Generating traces for redis..."
