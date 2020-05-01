@@ -8,7 +8,7 @@ bug-reports: "https://github.com/jjhenkel/lsee/issues"
 license: "MIT"
 dev-repo: "https://github.com/jjhenkel/lsee"
 build: [
-  ["jbuilder build"]
+  ["dune build"]
 ]
 remove: ["ocamlfind" "remove" "project"]
 depends: "ocamlfind"

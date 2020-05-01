@@ -1,0 +1,270 @@
+get_current $START $END
+current_top_of_stack $START $END
+current_thread_info $START current_top_of_stack $END
+copy_to_user $START __might_fault _copy_to_user $RET__copy_to_user $END
+copy_to_user $START __might_fault __copy_to_user_overflow $END
+copy_to_user $START __might_fault copy_to_user_overflow $END
+copy_to_user $START __might_fault _copy_to_user $RET__copy_to_user $END
+bochs_cpu_amd1 $START memcmp cpu_write_brand cpu_write_brand memcmp $END
+bochs_cpu_amd2 $START $END
+bochs_cpu_intel1 $START memcmp cpu_write_brand cpu_write_brand memcmp $END
+bochs_reg_key1 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+cpu_hv $START cpuid_hv_bit $END
+cpu_known_vm_vendors $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] cpu_write_hv_vendor __builtin_stack_save __builtin_stack_restore $RET_0 $END
+cpu_known_vm_vendors $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] cpu_write_hv_vendor cpu_write_hv_vendor memcmp memcmp_$NEQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+cpu_known_vm_vendors $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] cpu_write_hv_vendor cpu_write_hv_vendor memcmp memcmp_$EQ_0 __builtin_stack_save __builtin_stack_restore $RET_1 $END
+cpu_rdtsc $START $RET_1 $END
+cpu_rdtsc $START $RET_0 $END
+cpu_rdtsc $START $RET_1 $END
+cpu_rdtsc $START rdtsc_diff Sleep $RET_1 $END
+cpu_rdtsc $START rdtsc_diff Sleep $RET_0 $END
+cpu_rdtsc $START rdtsc_diff Sleep $RET_1 $END
+cpu_rdtsc_force_vmexit $START $RET_1 $END
+cpu_rdtsc_force_vmexit $START $RET_0 $END
+cpu_rdtsc_force_vmexit $START $RET_1 $END
+cpu_rdtsc_force_vmexit $START rdtsc_diff_vmexit Sleep $RET_1 $END
+cpu_rdtsc_force_vmexit $START rdtsc_diff_vmexit Sleep $RET_0 $END
+cpu_rdtsc_force_vmexit $START rdtsc_diff_vmexit Sleep $RET_1 $END
+cpu_write_brand $START $END
+cpu_write_brand $START cpuid_brand cpuid_brand cpuid_brand !(*) $END
+cpu_write_hv_vendor $START cpuid_hv_vendor_00 $END
+cpu_write_vendor $START cpuid_vendor_00 $END
+cpuid_brand $START sprintf sprintf sprintf sprintf $END
+cpuid_hv_bit $START $END
+cpuid_hv_vendor_00 $START sprintf sprintf sprintf !(*) $END
+cpuid_vendor_00 $START sprintf sprintf sprintf !(*) $END
+rdtsc_diff $START $END
+rdtsc_diff_vmexit $START $END
+cuckoo_check_tls $START read_hook_info read_hook_info_$NEQ_0 read_hook_info_$EQ_0 $RET_0 $END
+cuckoo_check_tls $START read_hook_info read_hook_info_$NEQ_0 read_hook_info_$NEQ_0 ?->retaddr_esp $RET_0 $END
+cuckoo_check_tls $START read_hook_info read_hook_info_$NEQ_0 read_hook_info_$NEQ_0 ?->retaddr_esp ?->retaddr_esp $RET_0 $END
+cuckoo_check_tls $START read_hook_info read_hook_info_$NEQ_0 read_hook_info_$NEQ_0 ?->retaddr_esp ?->retaddr_esp $RET_1 $END
+cuckoo_check_tls $START read_hook_info read_hook_info_$EQ_0 $RET_0 $END
+read_hook_info $START $END
+debug_isdebuggerpresent $START IsDebuggerPresent IsDebuggerPresent_$EQ_0 $RET_0 $END
+debug_isdebuggerpresent $START IsDebuggerPresent IsDebuggerPresent_$NEQ_0 $RET_1 $END
+debug_outputdebugstring $START SetLastError OutputDebugStringA GetLastError $RET_0 $END
+debug_outputdebugstring $START SetLastError OutputDebugStringA GetLastError $RET_1 $END
+gensandbox_IsNativeVhdBoot $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$EQ_0 $END
+gensandbox_IsNativeVhdBoot $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$EQ_0 $RET_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 $RET_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 ?(*(&)) $RET_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 ?(*(&)) GetLogicalDriveStringsA GetDriveTypeA GetDriveTypeA_$EQ_2 snprintf pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA strlen ?(*) $RET_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 ?(*(&)) GetLogicalDriveStringsA GetDriveTypeA GetDriveTypeA_$NEQ_2 pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA snprintf snprintf GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file pafish_exists_file_$EQ_0 pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA snprintf snprintf GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file pafish_exists_file_$EQ_0 snprintf pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA strlen ?(*) $RET_0 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 ?(*(&)) GetLogicalDriveStringsA GetDriveTypeA GetDriveTypeA_$NEQ_2 pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA snprintf snprintf GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file pafish_exists_file_$EQ_0 pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA snprintf snprintf GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file pafish_exists_file_$NEQ_0 $RET_1 $END
+gensandbox_common_names $START GetLogicalDriveStringsA GetLogicalDriveStringsA_$NEQ_0 ?(*(&)) GetLogicalDriveStringsA GetDriveTypeA GetDriveTypeA_$NEQ_2 pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file GetLogicalDriveStringsA GetDriveTypeA snprintf snprintf GetLogicalDriveStringsA GetDriveTypeA pafish_exists_file pafish_exists_file_$NEQ_0 $RET_1 $END
+gensandbox_drive_size $START CreateFileA CreateFileA_$NEQ_-1 CloseHandle CreateFileA DeviceIoControl DeviceIoControl CreateFileA CloseHandle DeviceIoControl_$EQ_0 $RET_0 $END
+gensandbox_drive_size $START CreateFileA CreateFileA_$NEQ_-1 CloseHandle CreateFileA DeviceIoControl DeviceIoControl CreateFileA CloseHandle DeviceIoControl_$NEQ_0 ?.Length.QuadPart $RET_0 $END
+gensandbox_drive_size $START CreateFileA CreateFileA_$NEQ_-1 CloseHandle CreateFileA DeviceIoControl DeviceIoControl CreateFileA CloseHandle DeviceIoControl_$NEQ_0 ?.Length.QuadPart $RET_1 $END
+gensandbox_drive_size $START CreateFileA CreateFileA_$EQ_-1 CreateFileA CloseHandle $RET_0 $END
+gensandbox_drive_size2 $START GetDiskFreeSpaceExA GetDiskFreeSpaceExA_$EQ_0 $RET_0 $END
+gensandbox_drive_size2 $START GetDiskFreeSpaceExA GetDiskFreeSpaceExA_$NEQ_0 ?.QuadPart $RET_0 $END
+gensandbox_drive_size2 $START GetDiskFreeSpaceExA GetDiskFreeSpaceExA_$NEQ_0 ?.QuadPart $RET_1 $END
+gensandbox_less_than_onegb $START !.dwLength GlobalMemoryStatusEx $END
+gensandbox_mouse_act $START GetCursorPos Sleep GetCursorPos ?.x ?.x $RET_0 $END
+gensandbox_mouse_act $START GetCursorPos Sleep GetCursorPos ?.x ?.x ?.y ?.y $RET_0 $END
+gensandbox_mouse_act $START GetCursorPos Sleep GetCursorPos ?.x ?.x ?.y ?.y $RET_1 $END
+gensandbox_one_cpu $START $END
+gensandbox_one_cpu_GetSystemInfo $START GetSystemInfo $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 $RET_0 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen toupper ![?] GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 $RET_0 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen toupper ![?] GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen toupper ![?] GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$EQ_0 strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_path $START GetModuleFileNameA GetModuleFileNameA strlen toupper ![?] GetModuleFileNameA strlen strlen GetModuleFileNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_sleep_patched $START GetTickCount Sleep GetTickCount $RET_1 $END
+gensandbox_sleep_patched $START GetTickCount Sleep GetTickCount $RET_0 $END
+gensandbox_uptime $START GetTickCount $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 $RET_0 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen toupper ![?] GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 $RET_0 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen toupper ![?] GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen toupper ![?] GetUserNameA strlen strlen GetUserNameA strstr strstr_$EQ_0 strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+gensandbox_username $START GetUserNameA GetUserNameA strlen toupper ![?] GetUserNameA strlen strlen GetUserNameA strstr strstr_$NEQ_0 $RET_1 $END
+check_hook_CreateProcessA_m1 $START check_hook_m1 $RET_check_hook_m1 $END
+check_hook_DeleteFileW_m1 $START check_hook_m1 $RET_check_hook_m1 $END
+check_hook_ShellExecuteExW_m1 $START check_hook_m1 $RET_check_hook_m1 $END
+check_hook_m1 $START ?(*) $RET_1 $END
+check_hook_m1 $START ?(*) ?(*) $RET_0 $END
+check_hook_m1 $START ?(*) ?(*) $RET_1 $END
+dget $START $END
+dget $START lockref_get $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$EQ_0 snprintf cpu_write_brand printf write_log printf snprintf snprintf write_log snprintf printf cpu_write_hv_vendor strlen strlen_$EQ_0 write_log printf cpu_write_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$EQ_0 snprintf cpu_write_brand printf write_log printf snprintf snprintf write_log snprintf printf cpu_write_hv_vendor strlen strlen_$EQ_0 write_log printf cpu_write_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion exec_check print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$EQ_0 snprintf cpu_write_brand printf write_log printf snprintf snprintf write_log snprintf printf cpu_write_hv_vendor strlen strlen_$NEQ_0 write_log strlen printf cpu_write_hv_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$EQ_0 snprintf cpu_write_brand printf write_log printf snprintf snprintf write_log snprintf printf cpu_write_hv_vendor strlen strlen_$NEQ_0 write_log strlen printf cpu_write_hv_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion exec_check print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$NEQ_0 strlen cpu_write_hv_vendor printf cpu_write_brand printf write_log printf snprintf snprintf write_log printf cpu_write_hv_vendor strlen strlen_$EQ_0 write_log printf cpu_write_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$NEQ_0 strlen cpu_write_hv_vendor printf cpu_write_brand printf write_log printf snprintf snprintf write_log printf cpu_write_hv_vendor strlen strlen_$EQ_0 write_log printf cpu_write_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion exec_check print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$NEQ_0 strlen cpu_write_hv_vendor printf cpu_write_brand printf write_log printf snprintf snprintf write_log printf cpu_write_hv_vendor strlen strlen_$NEQ_0 write_log printf cpu_write_vendor strlen printf cpu_write_hv_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+main $START write_log write_trace_dns init_cmd_colors print_header !.dwOSVersionInfoSize GetVersionExA printf snprintf printf cpu_write_vendor strlen cpu_write_hv_vendor cpu_write_brand snprintf printf cpu_write_vendor printf cpu_write_hv_vendor strlen strlen_$NEQ_0 strlen cpu_write_hv_vendor printf cpu_write_brand printf write_log printf snprintf snprintf write_log printf cpu_write_hv_vendor strlen strlen_$NEQ_0 write_log printf cpu_write_vendor strlen printf cpu_write_hv_vendor printf cpu_write_brand snprintf snprintf write_log print_check_group exec_check ?.dwMajorVersion exec_check print_check_group exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check print_check_group exec_check print_check_group exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check exec_check exec_check exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check exec_check exec_check print_check_group exec_check __builtin_puts printf write_log write_trace_dns getchar init_cmd_colors restore_cmd_colors $RET_0 $END
+qemu_cpu_name $START memcmp cpu_write_brand cpu_write_brand memcmp $END
+qemu_reg_key1 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+qemu_reg_key2 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+sboxie_detect_sbiedll $START GetModuleHandleA GetModuleHandleA_$EQ_0 $RET_0 $END
+sboxie_detect_sbiedll $START GetModuleHandleA GetModuleHandleA_$NEQ_0 $RET_1 $END
+exit_module $START unregister_kretprobe unregister_kretprobe unregister_jprobe unregister_jprobe $END
+filldir64_ret_handler $START ?.bypass $END
+filldir64_ret_handler $START ?.bypass copy_to_user $END
+init_module $START !.kp.addr !.kp.addr !.kp.addr !.kp.addr register_kretprobe register_kretprobe register_jprobe register_jprobe $RET_0 $END
+j_filldir64 $START !.bypass jprobe_return $RET_0 $END
+j_filldir64 $START !.bypass !.d_name_ptr !.bypass jprobe_return $RET_0 $END
+j_filldir64 $START !.bypass strcmp strcmp_$NEQ_0 jprobe_return $RET_0 $END
+j_filldir64 $START !.bypass strcmp strcmp_$NEQ_0 !.d_name_ptr !.bypass jprobe_return $RET_0 $END
+j_filldir64 $START !.bypass strcmp strcmp_$EQ_0 jprobe_return $RET_0 $END
+j_filldir64 $START !.bypass strcmp strcmp_$EQ_0 !.d_name_ptr !.bypass jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$NEQ_0 fget fget_$EQ_0 jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$NEQ_0 fget fget_$NEQ_0 dget dget_$EQ_0 jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$NEQ_0 fget fget_$NEQ_0 dget dget_$NEQ_0 dget dput fget fput ?->d_inode->i_ino jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$NEQ_0 fget fget_$NEQ_0 dget dget_$NEQ_0 dget dput fget fput ?->d_inode->i_ino printk current_thread_info current_thread_info !->addr_limit.seg current_thread_info !->addr_limit jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$NEQ_0 printk current_thread_info current_thread_info !->addr_limit.seg current_thread_info !->addr_limit jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$EQ_0 strstr strstr_$EQ_0 fget fget_$EQ_0 jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$EQ_0 strstr strstr_$EQ_0 fget fget_$NEQ_0 dget dget_$EQ_0 jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$EQ_0 strstr strstr_$EQ_0 fget fget_$NEQ_0 dget dget_$NEQ_0 dget dput fget fput ?->d_inode->i_ino jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$EQ_0 strstr strstr_$EQ_0 fget fget_$NEQ_0 dget dget_$NEQ_0 dget dput fget fput ?->d_inode->i_ino printk current_thread_info current_thread_info !->addr_limit.seg current_thread_info !->addr_limit jprobe_return $RET_0 $END
+j_sys_write $START get_current strcmp printk printk strcmp strcmp_$EQ_0 strstr strstr_$EQ_0 strstr strstr_$NEQ_0 printk current_thread_info current_thread_info !->addr_limit.seg current_thread_info !->addr_limit jprobe_return $RET_0 $END
+sys_write_ret_handler $START $RET_0 $END
+sys_write_ret_handler $START $RET_0 $END
+snprintf $START __ms_vsnprintf __builtin_va_end __builtin_va_start __builtin_va_start __builtin_va_end __ms_vsnprintf __ms_vsnprintf __builtin_va_start __builtin_va_end $RET___ms_vsnprintf $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses $RET_0 $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses LocalAlloc LocalAlloc_$EQ_0 $RET_0 $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses GetAdaptersAddresses_$NEQ_0 GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses GetAdaptersAddresses_$EQ_0 LocalAlloc_$EQ_0 GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses GetAdaptersAddresses_$EQ_0 LocalAlloc_$NEQ_0 mbstowcs wcsstr wcsstr_$EQ_0 ?->Next GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_adapter_name $START mbstowcs GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses GetAdaptersAddresses_$EQ_0 LocalAlloc_$NEQ_0 mbstowcs wcsstr wcsstr_$NEQ_0 GetAdaptersAddresses LocalAlloc LocalFree $RET_1 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses $RET_0 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses LocalAlloc LocalAlloc_$EQ_0 $RET_0 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses LocalAlloc_$EQ_0 GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses LocalAlloc_$NEQ_0 ?->PhysicalAddressLength ?->Next GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses LocalAlloc_$NEQ_0 ?->PhysicalAddressLength memcmp memcpy memcpy memcmp memcmp_$NEQ_0 ?->Next GetAdaptersAddresses LocalAlloc LocalFree $RET_0 $END
+pafish_check_mac_vendor $START GetAdaptersAddresses LocalAlloc LocalAlloc_$NEQ_0 LocalAlloc GetAdaptersAddresses LocalAlloc_$NEQ_0 ?->PhysicalAddressLength memcmp memcpy memcpy memcmp memcmp_$EQ_0 GetAdaptersAddresses LocalAlloc LocalFree $RET_1 $END
+pafish_disable_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$EQ_0 $RET_0 $END
+pafish_disable_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $RET_0 $END
+pafish_disable_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $RET_1 $END
+pafish_exists_file $START pafish_iswow64 pafish_iswow64_$NEQ_1 GetFileAttributesA $END
+pafish_exists_file $START pafish_iswow64 pafish_iswow64_$EQ_1 pafish_disable_wow64_fs_redirection pafish_disable_wow64_fs_redirection_$EQ_0 $END
+pafish_exists_file $START pafish_iswow64 pafish_iswow64_$EQ_1 pafish_disable_wow64_fs_redirection pafish_disable_wow64_fs_redirection_$NEQ_0 GetFileAttributesA pafish_revert_wow64_fs_redirection $END
+pafish_exists_regkey $START pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$NEQ_0 $RET_0 $END
+pafish_exists_regkey $START pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey $RET_1 $END
+pafish_exists_regkey $START pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$NEQ_0 $RET_0 $END
+pafish_exists_regkey $START pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$NEQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$NEQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper ![?] strstr RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper ![?] strstr RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper ![?] strstr RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$EQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey strstr RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 strstr RegQueryValueExA strlen toupper ![?] strstr RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$NEQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$NEQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper !(*) strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper !(*) strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper ![?] RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper ![?] RegQueryValueExA strlen strlen RegQueryValueExA strncpy free malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper ![?] RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy malloc strstr strstr_$EQ_0 strstr strncpy malloc free $RET_0 $END
+pafish_exists_regkey_value_str $START strncpy strlen strncpy malloc malloc strlen malloc strncpy pafish_iswow64 pafish_iswow64_$NEQ_0 RegOpenKeyExA RegOpenKeyExA_$EQ_0 RegCloseKey RegQueryValueExA RegQueryValueExA RegCloseKey RegQueryValueExA_$EQ_0 RegQueryValueExA strlen toupper ![?] RegQueryValueExA strlen toupper !(*) strlen RegQueryValueExA strncpy malloc strstr strstr_$NEQ_0 strstr strncpy malloc free $RET_1 $END
+pafish_iswow64 $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$EQ_0 $RET_0 $END
+pafish_iswow64 $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 GetCurrentProcess $RET_0 $END
+pafish_iswow64 $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 GetCurrentProcess $RET_0 $END
+pafish_revert_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$EQ_0 $RET_0 $END
+pafish_revert_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $RET_0 $END
+pafish_revert_wow64_fs_redirection $START GetModuleHandleA GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $RET_1 $END
+wmi_cleanup $START CoUninitialize $END
+wmi_cleanup $START CoUninitialize $END
+wmi_initialize $START CoInitializeEx CoInitializeEx_$GTE_0 CoInitializeSecurity CoInitializeSecurity_$GTE_0 CoCreateInstance CoCreateInstance_$GTE_0 SysAllocString SysAllocString SysFreeString $END
+wmi_initialize $START CoInitializeEx CoInitializeEx_$GTE_0 CoInitializeSecurity CoInitializeSecurity_$GTE_0 CoCreateInstance CoCreateInstance_$LT_0 CoUninitialize $RET_0 $END
+wmi_initialize $START CoInitializeEx CoInitializeEx_$GTE_0 CoInitializeSecurity CoInitializeSecurity_$LT_0 CoUninitialize $RET_0 $END
+wmi_initialize $START CoInitializeEx CoInitializeEx_$LT_0 $RET_0 $END
+vbox_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] CreateFileA CreateFileA_$EQ_-1 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] CreateFileA CreateFileA_$NEQ_-1 CreateFileA snprintf __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] CreateFileA CreateFileA_$NEQ_-1 CreateFileA snprintf snprintf write_log __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_mac $START pafish_check_mac_vendor $RET_pafish_check_mac_vendor $END
+vbox_network_share $START __builtin_stack_save __builtin_alloca_with_align __builtin_alloca_with_align WNetGetProviderNameA WNetGetProviderNameA_$NEQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_network_share $START __builtin_stack_save __builtin_alloca_with_align __builtin_alloca_with_align WNetGetProviderNameA WNetGetProviderNameA_$EQ_0 WNetGetProviderNameA __builtin_alloca_with_align lstrcmpiA lstrcmpiA_$NEQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_network_share $START __builtin_stack_save __builtin_alloca_with_align __builtin_alloca_with_align WNetGetProviderNameA WNetGetProviderNameA_$EQ_0 WNetGetProviderNameA __builtin_alloca_with_align lstrcmpiA lstrcmpiA_$EQ_0 __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$EQ_-1 $RET_0 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_0 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$NEQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$EQ_0 Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$EQ_0 $RET_1 $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$NEQ_0 lstrcmpiA lstrcmpiA_$EQ_0 write_log lstrcmpiA lstrcmpiA_$EQ_0 write_log Process32First CloseHandle CreateToolhelp32Snapshot Process32First Process32Next Process32Next_$NEQ_0 lstrcmpiA $END
+vbox_processes $START CreateToolhelp32Snapshot CreateToolhelp32Snapshot_$NEQ_-1 !.dwSize CreateToolhelp32Snapshot Process32First Process32First_$EQ_0 Process32First CreateToolhelp32Snapshot CloseHandle $RET_0 $END
+vbox_reg_key1 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+vbox_reg_key10 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+vbox_reg_key2 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+vbox_reg_key3 $START pafish_exists_regkey $RET_pafish_exists_regkey $END
+vbox_reg_key4 $START pafish_exists_regkey_value_str $RET_pafish_exists_regkey_value_str $END
+vbox_reg_key5 $START pafish_exists_regkey $RET_pafish_exists_regkey $END
+vbox_reg_key7 $START pafish_exists_regkey $RET_pafish_exists_regkey $END
+vbox_reg_key8 $START pafish_exists_regkey $RET_pafish_exists_regkey $END
+vbox_reg_key9 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_reg_key9 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] pafish_exists_regkey pafish_exists_regkey_$EQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_reg_key9 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] pafish_exists_regkey pafish_exists_regkey_$NEQ_0 pafish_exists_regkey snprintf __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_reg_key9 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] pafish_exists_regkey pafish_exists_regkey_$NEQ_0 pafish_exists_regkey snprintf snprintf write_log __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_sysfile1 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_sysfile1 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] pafish_exists_file pafish_exists_file_$EQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_sysfile1 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] pafish_exists_file pafish_exists_file_$NEQ_0 pafish_exists_file snprintf __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_sysfile1 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] pafish_exists_file pafish_exists_file_$NEQ_0 pafish_exists_file snprintf snprintf write_log __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_sysfile2 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] !(*)[6] !(*)[7] !(*)[8] !(*)[9] !(*)[10] !(*)[11] !(*)[12] !(*)[13] __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_sysfile2 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] !(*)[6] !(*)[7] !(*)[8] !(*)[9] !(*)[10] !(*)[11] !(*)[12] !(*)[13] pafish_exists_file pafish_exists_file_$EQ_0 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vbox_sysfile2 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] !(*)[6] !(*)[7] !(*)[8] !(*)[9] !(*)[10] !(*)[11] !(*)[12] !(*)[13] pafish_exists_file pafish_exists_file_$NEQ_0 pafish_exists_file snprintf __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_sysfile2 $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] !(*)[2] !(*)[3] !(*)[4] !(*)[5] !(*)[6] !(*)[7] !(*)[8] !(*)[9] !(*)[10] !(*)[11] !(*)[12] !(*)[13] pafish_exists_file pafish_exists_file_$NEQ_0 pafish_exists_file snprintf snprintf write_log __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vbox_traywindow $START FindWindowA FindWindowA FindWindowA_$NEQ_0 $RET_1 $END
+vbox_traywindow $START FindWindowA FindWindowA FindWindowA_$EQ_0 FindWindowA_$EQ_0 $RET_0 $END
+vbox_traywindow $START FindWindowA FindWindowA FindWindowA_$EQ_0 FindWindowA_$NEQ_0 $RET_1 $END
+vbox_wmi_check_row $START $RET_0 $END
+vbox_wmi_check_row $START ?.vt $RET_0 $END
+vbox_wmi_check_row $START ?.vt wcsstr $END
+vbox_wmi_check_row $START ?.vt $RET_0 $END
+vbox_wmi_devices $START wmi_initialize wmi_initialize_$EQ_1 wmi_check_query wmi_cleanup $RET_wmi_check_query $END
+vbox_wmi_devices $START wmi_initialize wmi_initialize_$NEQ_1 $RET_0 $END
+vmware_adapter_name $START pafish_check_adapter_name $RET_pafish_check_adapter_name $END
+vmware_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vmware_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] CreateFileA CreateFileA_$EQ_-1 __builtin_stack_save __builtin_stack_restore $RET_0 $END
+vmware_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] CreateFileA CreateFileA_$NEQ_-1 CreateFileA snprintf __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vmware_devices $START __builtin_stack_save __builtin_alloca_with_align !(*)[0] !(*)[1] CreateFileA CreateFileA_$NEQ_-1 CreateFileA snprintf snprintf write_log __builtin_stack_save __builtin_stack_restore $RET_1 $END
+vmware_mac $START pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 $RET_0 $END
+vmware_mac $START pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$NEQ_0 $RET_1 $END
+vmware_mac $START pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$NEQ_0 $RET_1 $END
+vmware_mac $START pafish_check_mac_vendor pafish_check_mac_vendor_$EQ_0 pafish_check_mac_vendor pafish_check_mac_vendor_$NEQ_0 $RET_1 $END
+vmware_mac $START pafish_check_mac_vendor pafish_check_mac_vendor_$NEQ_0 $RET_1 $END
+vmware_reg_key1 $START pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$NEQ_0 $RET_1 $END
+vmware_reg_key1 $START pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$NEQ_0 $RET_1 $END
+vmware_reg_key1 $START pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 $RET_0 $END
+vmware_reg_key1 $START pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$EQ_0 pafish_exists_regkey_value_str pafish_exists_regkey_value_str_$NEQ_0 $RET_1 $END
+vmware_reg_key2 $START pafish_exists_regkey $RET_pafish_exists_regkey $END
+vmware_sysfile1 $START pafish_exists_file $RET_pafish_exists_file $END
+vmware_sysfile2 $START pafish_exists_file $RET_pafish_exists_file $END
+vmware_wmi_check_row $START $RET_0 $END
+vmware_wmi_check_row $START ?.vt $RET_0 $END
+vmware_wmi_check_row $START ?.vt wcsstr $END
+vmware_wmi_check_row $START ?.vt $RET_0 $END
+vmware_wmi_serial $START wmi_initialize wmi_initialize_$EQ_1 wmi_check_query wmi_cleanup $RET_wmi_check_query $END
+vmware_wmi_serial $START wmi_initialize wmi_initialize_$NEQ_1 $RET_0 $END
+wine_detect_get_unix_file_name $START GetModuleHandleA GetModuleHandleA_$EQ_0 $RET_0 $END
+wine_detect_get_unix_file_name $START GetModuleHandleA GetModuleHandleA_$NEQ_0 GetModuleHandleA GetProcAddress GetProcAddress_$EQ_0 $RET_0 $END
+wine_detect_get_unix_file_name $START GetModuleHandleA GetModuleHandleA_$NEQ_0 GetModuleHandleA GetProcAddress GetProcAddress_$NEQ_0 $RET_1 $END
+wine_reg_key1 $START pafish_exists_regkey $RET_pafish_exists_regkey $END

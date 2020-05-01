@@ -1,0 +1,3 @@
+(library
+  (name        lsee)
+  (libraries zarith z3 hashcons batteries stdio))
